@@ -1,5 +1,5 @@
-import React, {Fragment, useState} from 'react';
-import Advertencia from './Advertencia';
+import React, {useState} from 'react';
+import Error from './Error';
 
 const Pregunta = ({guardarPresupuesto, guardarRestante}) => {
 
@@ -30,10 +30,10 @@ const Pregunta = ({guardarPresupuesto, guardarRestante}) => {
 
 
     return ( 
-        <Fragment>
+        <>
             <h2>Coloca tu presupuesto</h2>
 
-            { error ? <Advertencia mensaje="El Presupuesto es Incorrecto" />  : null }
+            { error && <Error mensaje="El Presupuesto es Incorrecto" /> }
 
             <form
                 onSubmit={agregarPresupuesto}
@@ -51,7 +51,7 @@ const Pregunta = ({guardarPresupuesto, guardarRestante}) => {
                     value="Definir Presupuesto"
                 />
             </form>
-        </Fragment>
+        </>
      );
 }
  
